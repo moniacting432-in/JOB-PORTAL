@@ -85,9 +85,16 @@ app.get("/", (req, res) => {
   res.send("Backend is running ✅");
 });
 
-// ✅ Start server
+// ✅ Start server only after DB connection
 const PORT = process.env.PORT || 8000;
-server.listen(PORT, () => {
-  connectDB();
-  console.log(`Server running at port ${PORT}`);
-});
+
+connectDB()
+  .then(() => {
+    server.listen(PORT, () => {
+      console.log(`✅ Server running at port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("❌ Failed to connect to DB:", err);
+    process.exit(1);
+  });
