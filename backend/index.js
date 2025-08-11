@@ -12,6 +12,8 @@ import applicationRoute from "./routes/application.route.js";
 import Chat from "./models/chat.model.js";
 
 dotenv.config({});
+console.log("process.env.PORT =", process.env.PORT);
+
 
 const app = express();
 const server = http.createServer(app);
