@@ -155,7 +155,6 @@ export const updateProfile = async (req, res) => {
         }
 
 
-
         if (fullname) user.fullname = fullname;
         if (email) user.email = email;
         if (phoneNumber) user.phoneNumber = phoneNumber;

@@ -1,16 +1,48 @@
 import React, { useEffect, useState } from "react";
+// React core and hooks:
+// - useEffect: to perform side effects after component mounts or updates
+// - useState: to manage local state (e.g., form inputs)
+
 import Navbar from "../ui/shared/Navbar";
+// Reusable top navigation bar component
+
 import { Label } from "@radix-ui/react-label";
+// Accessible form label component from Radix UI
+
 import { Input } from "../ui/input";
+// Styled input component for user text entry
+
 import { RadioGroup } from "@radix-ui/react-radio-group";
+// Grouped radio buttons from Radix UI for selecting options like gender/type
+
 import { Button } from "../ui/button";
+// Styled button component for form submission or other actions
+
 import { Link, useNavigate } from "react-router-dom";
+// React Router:
+// - Link: for navigation via anchor-like elements
+// - useNavigate: to navigate programmatically between routes
+
 import { toast } from "sonner";
+// Library for displaying toast notifications (e.g., for feedback on actions)
+
 import axios from "axios";
+// HTTP client to send requests to a backend API
+
 import { USER_API_END_POINT } from "@/utils/constant";
+// Constant defining the base URL for user-related API calls
+
 import { useDispatch, useSelector } from "react-redux";
+// Redux hooks:
+// - useDispatch: to dispatch actions to the global state
+// - useSelector: to access values from the global Redux store
+
 import { setLoading } from "@/redux/authSlice";
+// Redux action to toggle loading state (e.g., during API calls)
+
 import { Loader2 } from "lucide-react";
+// Spinner icon used to indicate a loading state (e.g., while submitting a form)
+
 
 const Signup = () => {
   const [input, setInput] = useState({

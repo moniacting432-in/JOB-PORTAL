@@ -1,4 +1,5 @@
 import React from 'react';
+// Core React library needed to define and render React components
 
 const Footer = () => {
   return (

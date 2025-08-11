@@ -1,14 +1,34 @@
 import React, { useState } from 'react'
 import Navbar from '../ui/shared/Navbar'
+// Reusable Navbar component used for page navigation
+
 import { Label } from '../ui/label'
+// Styled label component for form inputs
+
 import { Input } from '../ui/input'
+// Styled input field component for user text entry
+
 import { Button } from '../ui/button'
+// Styled button component for form submission or user actions
+
 import { useNavigate } from 'react-router-dom'
+// Hook used to navigate to different routes/pages programmatically
+
 import axios from 'axios'
+// HTTP client used to send API requests to the backend
+
 import { COMPANY_API_END_POINT } from '@/utils/constant'
+// Constant storing the base URL or endpoint for company-related API calls
+
 import { toast } from 'sonner'
+// Library used to display toast notifications (e.g., success/error messages)
+
 import { useDispatch } from 'react-redux'
+// Hook to dispatch actions to the Redux store (for state management)
+
 import { setSingleCompany } from '@/redux/companySlice'
+// Redux action used to update the state with a single company's data
+
 
 
 const CompanyCreate = () => {

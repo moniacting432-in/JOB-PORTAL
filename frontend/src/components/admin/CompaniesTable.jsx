@@ -1,10 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../ui/table'
+// React core and hooks:
+// - useEffect: to perform side effects like data fetching after component mounts
+// - useState: to handle local state in the component
+
+import { 
+  Table, 
+  TableBody, 
+  TableCaption, 
+  TableCell, 
+  TableHead, 
+  TableHeader, 
+  TableRow 
+} from '../ui/table'
+// ShadCN UI components to render a styled, structured table for displaying data
+
 import { Avatar, AvatarImage } from '../ui/avatar'
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
+// ShadCN UI components to display user/company avatars or profile images
+
+import { 
+  Popover, 
+  PopoverContent, 
+  PopoverTrigger 
+} from '../ui/popover'
+// Components used to display interactive popovers (e.g., for actions or info)
+
 import { Edit2, MoreHorizontal } from 'lucide-react'
+// Lucide icons:
+// - Edit2: pencil icon, typically used for edit buttons
+// - MoreHorizontal: three-dot icon, used for overflow menus (more actions)
+
 import { useSelector } from 'react-redux'
+// Hook to read values from the Redux store (global state)
+
 import { useNavigate } from 'react-router-dom'
+// Hook to navigate programmatically between routes/pages
+
 
 
 

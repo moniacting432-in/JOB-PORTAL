@@ -1,6 +1,5 @@
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Navbar from "./components/ui/shared/Navbar"; // Adjust the path if needed
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import Home from "./components/Home";
@@ -15,6 +14,8 @@ import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from "./components/admin/PostJob";
 import Applicants from "./components/admin/Applicants";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
+import ChatBox from "./components/ChatBox"; // Adjust path if needed
+
 
 
 
@@ -48,6 +49,7 @@ const appRouter = createBrowserRouter([
     path:"/profile",
     element:<Profile/>
   },
+  
   //admin ke liye yaha se start hoga
   {
     path:"/admin/companies",

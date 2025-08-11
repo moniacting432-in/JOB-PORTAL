@@ -3,16 +3,46 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@radix-ui/react-popover";
+// Radix UI components to create a popover (dropdown-like) interface
+// - PopoverTrigger: element that opens the popover
+// - PopoverContent: the content shown inside the popover
+
 import React from "react";
+// Core React library to define the component
+
 import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
+// Radix UI components for displaying user profile avatars
+
 import { Button } from "../button";
-import { LogOut, User } from "lucide-react"; // Importing icons
+// Custom styled button component for clickable actions (e.g., logout)
+
+import { LogOut, User } from "lucide-react";
+// Lucide icons:
+// - LogOut: icon representing the logout action
+// - User: icon representing the user/profile
+
 import { Link, useNavigate } from "react-router-dom";
+// React Router:
+// - Link: used for client-side navigation through anchor-like elements
+// - useNavigate: hook for programmatic navigation (e.g., after logout)
+
 import { useDispatch, useSelector } from "react-redux";
+// Redux hooks:
+// - useDispatch: to dispatch actions (e.g., clearing user data on logout)
+// - useSelector: to access current user info from the Redux store
+
 import { toast } from "sonner";
+// Library for displaying toast notifications (e.g., logout success/error)
+
 import axios from "axios";
+// HTTP client used to make API requests (e.g., logout request)
+
 import { USER_API_END_POINT } from "@/utils/constant";
+// Constant defining the API endpoint related to user operations
+
 import { setUser } from "@/redux/authSlice";
+// Redux action used to update the user state (e.g., clear user info on logout)
+
 
 
 const Navbar = () => {

@@ -1,10 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../ui/table'
-import { Avatar, AvatarImage } from '../ui/avatar'
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
-import { Edit2, Eye, MoreHorizontal } from 'lucide-react'
-import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+// Importing React and necessary hooks for managing component state and side effects
+import React, { useEffect, useState } from 'react';
+
+// Importing various table components from a custom UI library or file to display tables
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
+
+// Importing Popover components to create dropdown-like menus for user interactions
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+
+// Importing specific icons from the lucide-react library, which is used for vector icons
+import { Edit2, Eye, MoreHorizontal } from 'lucide-react';
+
+// Importing the useSelector hook from 'react-redux' to access the Redux store's state
+import { useSelector } from 'react-redux';
+
+// Importing the useNavigate hook from 'react-router-dom' to programmatically navigate between routes
+import { useNavigate } from 'react-router-dom';
 
 
 

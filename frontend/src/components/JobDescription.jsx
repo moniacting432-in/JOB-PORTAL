@@ -8,6 +8,8 @@ import { setSingleJob } from "@/redux/jobSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "sonner";
 import { APPLICATION_API_END_POINT } from "@/utils/constant";
+import ChatBox from "./ChatBox"; // Adjust path if needed
+
 
 const JobDescription = () => {
 
@@ -15,6 +17,10 @@ const JobDescription = () => {
   const { id: jobId } = useParams();
   const {singleJob} = useSelector(store=>store.job);
   const {user} = useSelector(store=>store.auth);
+  const recruiterId = singleJob?.postedBy?._id || "recruiter";
+const candidateId = user?._id || "candidate";
+const roomId = `${recruiterId}_${candidateId}`;
+
   const isInitiallyApplied = singleJob?.applications?.some(application => application.applicant == user?._id) || false;
   const [isApplied , setIsApplied] = useState(isInitiallyApplied);
 
@@ -89,7 +95,11 @@ const JobDescription = () => {
         </Button>
       </div>
       <h1 className='border-b-2 border-b-gray-300 font-medium py-4'>Job Description</h1>
-      <div className='my-4'>
+   <div className='my-4'>
+  {user?.username && (
+    <ChatBox username={user.username} roomId={roomId} />
+  )}
+
        <h1 className='font-bold my-1'>Role:<span className='pl-4 font-normal text-gray-800'>{singleJob?.title}</span></h1>
        <h1 className='font-bold my-1'>Location:<span className='pl-4 font-normal text-gray-800'>{singleJob?.location}</span></h1>
        <h1 className='font-bold my-1'>Description:<span className='pl-4 font-normal text-gray-800'>

@@ -1,15 +1,47 @@
 import React, { useState } from 'react'
+// React core and useState hook to manage local component state
+
 import Navbar from '../ui/shared/Navbar'
+// Reusable Navbar component used for page navigation
+
 import { Label } from '../ui/label'
+// Styled label component for form fields
+
 import { Input } from '../ui/input'
+// Styled input field component for user input
+
 import { Button } from '../ui/button'
+// Styled button component for form submission or actions
+
 import { useSelector } from 'react-redux'
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '../ui/select'
+// Hook to access data from the Redux store (global state)
+
+import { 
+  Select, 
+  SelectContent, 
+  SelectGroup, 
+  SelectItem, 
+  SelectLabel, 
+  SelectTrigger, 
+  SelectValue 
+} from '../ui/select'
+// Styled Select dropdown components for choosing options (e.g., job type, location)
+
 import axios from 'axios'
+// HTTP client for sending API requests to the backend
+
 import { toast } from 'sonner'
+// Toast notification library for displaying success/error/info messages
+
 import { useNavigate } from 'react-router-dom'
+// Hook to programmatically navigate between routes/pages
+
 import { Loader2 } from 'lucide-react'
+// Spinner icon used to show a loading state during actions like form submission
+
 import { JOB_API_END_POINT } from '@/utils/constant'
+// Constant holding the base URL or endpoint for job-related API calls
+
 
 const companyArray = [];
 

@@ -1,7 +1,11 @@
+// Importing React to create components and hooks in a React application
+import React from 'react';
 
-import React from 'react'
-import { Badge } from './ui/badge'
-import { useNavigate } from 'react-router-dom'
+// Importing the Badge component from a custom UI library or file
+import { Badge } from './ui/badge';
+
+// Importing the useNavigate hook from 'react-router-dom' for programmatic navigation
+import { useNavigate } from 'react-router-dom';
 
 const LatestJobCards = ({job}) => {
   const navigate = useNavigate();

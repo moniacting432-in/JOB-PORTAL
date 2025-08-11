@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from '../ui/shared/Navbar'
-import { Input } from '../ui/input'
-import { Button } from '../ui/button'
+// Importing React to use hooks like useEffect and useState for component logic
+import React, { useEffect, useState } from 'react';
+
+// Importing the Navbar component from a shared UI folder, which will be used to display the navigation bar
+import Navbar from '../ui/shared/Navbar';
+
+// Importing Input and Button components, which are custom UI components for user input and actions
+import { Input } from '../ui/input';
+import { Button } from '../ui/button';
 
 import { useNavigate } from 'react-router-dom'
 

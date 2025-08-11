@@ -1,14 +1,30 @@
-import React from 'react'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../ui/table'
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
-import { MoreHorizontal } from 'lucide-react';
-import { useSelector } from 'react-redux';
-import { toast } from 'sonner';
-import axios from 'axios';
-import { APPLICATION_API_END_POINT } from '@/utils/constant';
+import React from 'react' 
+// Required to use JSX and create React components.
+
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../ui/table' 
+// Used to build a styled table structure for displaying tabular data.
+
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
+// Used to create a popover UI element that shows content when triggered (e.g., on click or hover).
+
+import { MoreHorizontal } from 'lucide-react'
+// An icon component showing three horizontal dots, usually for a "more options" button.
+
+import { useSelector } from 'react-redux'
+// Hook to access specific data from the Redux store (global state management).
+
+import { toast } from 'sonner'
+// Provides non-blocking toast notifications for user feedback (like success/error alerts).
+
+import axios from 'axios'
+// Promise-based HTTP client to send API requests to a server.
+
+import { APPLICATION_API_END_POINT } from '@/utils/constant'
+// A constant that holds the base URL or endpoint for application-related API calls.
+
 
 const shortlistingStatus = ["Accepted","Rejected"];
-const ApplicantsTable = () => {
+const ApplicantsTable = ({ setSelectedApplicantId }) => {
     const { applicants } = useSelector(store => store.application);
 
     const statusHandler = async (status, id) => {
@@ -76,7 +92,15 @@ const ApplicantsTable = () => {
                     </div>
                   ))
                 }
-              </PopoverContent>
+              
+                <div
+    onClick={() => setSelectedApplicantId(item?.applicant?._id)}
+    className="flex w-fit items-center my-2 cursor-pointer text-blue-600"
+  >
+    <span>Chat</span>
+  </div>
+  </PopoverContent>
+
             </Popover>
           </TableCell>
         </tr>
