@@ -18,7 +18,7 @@ const server = http.createServer(app);
 // ✅ Allowed origins for CORS (local + production)
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://your-frontend.vercel.app" // ⬅ Replace with your actual Vercel URL
+  "https://job-portal-azure-zeta.vercel.app" // ⬅ Replace with your actual Vercel URL
 ];
 
 // ✅ Middleware
@@ -27,7 +27,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true
   })
 );
