@@ -14,7 +14,7 @@ import AdminJobs from "./components/admin/AdminJobs";
 import PostJob from "./components/admin/PostJob";
 import Applicants from "./components/admin/Applicants";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
-import ChatBox from "./components/ChatBox"; // Adjust path if needed
+
 
 
 
