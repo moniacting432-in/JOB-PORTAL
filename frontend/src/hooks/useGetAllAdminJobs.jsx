@@ -11,7 +11,7 @@ const useGetAllAdminJobs = () => {
   useEffect(() => {
     const fetchAllAdminJobs = async () => {
       try {
-        const res = await axios.get(`${JOB_API_END_POINT}/getadminjobs`, {
+        const res = await axios.get(${JOB_API_END_POINT}/getadminjobs, {
           withCredentials: true,
         });
         if (res.data.success) {
@@ -27,4 +27,3 @@ const useGetAllAdminJobs = () => {
 };
 
 export default useGetAllAdminJobs;
-
