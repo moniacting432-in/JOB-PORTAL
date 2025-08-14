@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
 });
 
 // ✅ Start server only after DB connection
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT ;
 
 connectDB()
   .then(() => {
