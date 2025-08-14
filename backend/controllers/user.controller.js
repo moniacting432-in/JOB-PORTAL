@@ -5,6 +5,7 @@ import getDataUri from "../utils/datauri.js";
 import cloudinary from "../utils/cloudinary.js";
 
 export const register = async (req, res) => {
+
     try {
         const { fullname, email, phoneNumber, password, role } = req.body;
 
@@ -55,6 +56,7 @@ export const register = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+     console.log("Login request body:", req.body);
     try {
         const { email, password, role } = req.body;
 
