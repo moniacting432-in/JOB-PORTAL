@@ -93,12 +93,7 @@ const ApplicantsTable = ({ setSelectedApplicantId }) => {
                   ))
                 }
               
-                <div
-    onClick={() => setSelectedApplicantId(item?.applicant?._id)}
-    className="flex w-fit items-center my-2 cursor-pointer text-blue-600"
-  >
-    <span>Chat</span>
-  </div>
+               
   </PopoverContent>
 
             </Popover>
